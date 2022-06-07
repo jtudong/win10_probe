@@ -83,6 +83,13 @@
         "adminPassword": {
             "type": "string",
             "defaultValue": ""
+        },
+        "adminUserName": {
+            "type": "string",
+            "defaultValue": "sfcadmin",
+            "metadata": {
+                "description": "The name of the admin user"
+            }
         }
     },
     "functions": [],
@@ -249,7 +256,7 @@
                 },
                 "osProfile": {
                     "computerName": "[parameters('vmName')]",
-                    "adminUsername": "sfcadmin",
+                    "adminUsername": "[parameters('adminUserName')]",
                     "adminPassword": "[parameters('adminPassword')]",
                     "windowsConfiguration": {
                         "enableAutomaticUpdates": false,
