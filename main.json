@@ -31,13 +31,6 @@
                 "description": "The name of the resource group"
             }
         },
-        "gitBranch": {
-            "type": "string",
-            "metadata": {
-                "description": "The name of the current git branch"
-            },
-            "defaultValue": "master"
-        },
         "vmName": {
             "type": "string",
             "defaultValue": "windowsVM1",
