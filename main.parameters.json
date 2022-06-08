@@ -14,9 +14,6 @@
         "ResourceGroupName": {
             "value": "sfc-winprobe-dev-rg_"
         },
-        "gitBranch": {
-            "value": "master"
-        },
         "storageAccountPrefix": {
             "value": "wprobe"
         },
