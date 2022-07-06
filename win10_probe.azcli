@@ -1,5 +1,6 @@
 az account set -s 'Network Sandbox'
 cd /mnt/c/Users/jtudong/code/win10_probe
+PASSWORD=
 
 az network vnet subnet update -g sfc-network-dev-rg_ -n dev-winprobe --vnet-name sfc01-wu3-dev-vnet --remove networkSecurityGroup --nsg dev-winprobe-nsg
 az group delete -n sfc-winprobe-dev-rg_ --yes&&az group delete -n sfc-network-dev-rg_ --yes
@@ -8,4 +9,4 @@ az group create -l westus3 -n sfc-network-dev-rg_
 az group create -l westus3 -n sfc-winprobe-dev-rg_
 
 az deployment group validate -g sfc-winprobe-dev-rg_ -f main.json -p main.parameters.json
-az deployment group create -c -g sfc-winprobe-dev-rg_ -f main.json -p main.parameters.json adminPassword='$password'
+az deployment group create -c -g sfc-winprobe-dev-rg_ -f main.json -p main.parameters.json adminPassword=$PASSWORD

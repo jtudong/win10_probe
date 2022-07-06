@@ -31,13 +31,6 @@
                 "description": "The name of the resource group"
             }
         },
-        "gitBranch": {
-            "type": "string",
-            "metadata": {
-                "description": "The name of the current git branch"
-            },
-            "defaultValue": "master"
-        },
         "vmName": {
             "type": "string",
             "defaultValue": "windowsVM1",
@@ -83,6 +76,13 @@
         "adminPassword": {
             "type": "string",
             "defaultValue": ""
+        },
+        "adminUserName": {
+            "type": "string",
+            "defaultValue": "sfcadmin",
+            "metadata": {
+                "description": "The name of the admin user"
+            }
         }
     },
     "functions": [],
@@ -249,7 +249,7 @@
                 },
                 "osProfile": {
                     "computerName": "[parameters('vmName')]",
-                    "adminUsername": "sfcadmin",
+                    "adminUsername": "[parameters('adminUserName')]",
                     "adminPassword": "[parameters('adminPassword')]",
                     "windowsConfiguration": {
                         "enableAutomaticUpdates": false,
